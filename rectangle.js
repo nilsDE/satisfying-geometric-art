@@ -47,7 +47,7 @@ class Rectangle {
         resultX = topRightCorner.x + interimsVector.x;
         resultY = topRightCorner.y + interimsVector.y;
         pop();
-        stroke(random(255), random(255), random(255));
+        stroke(200, 0, 60);
         line(
             this.corners[this.section].x,
             this.corners[this.section].y,
