@@ -5,20 +5,16 @@ class Rectangle {
         this.width = width;
         this.height = height;
 
-        this.offset = 4;
-
-        // Agent
-        this.pos = createVector(0, 0);
-
         // Available space
         this.corners = [
-            { x: 0, y: 0 }, // initial top left
-            { x: this.width, y: 0 }, // initial top right
-            { x: this.width, y: this.height }, // initial bottom right
-            { x: 0, y: this.height }, // initial bottom left
+            { x: this.origin.x, y: this.origin.y }, // initial top left
+            { x: this.origin.x + this.width, y: this.origin.y }, // initial top right
+            { x: this.origin.x + this.width, y: this.origin.y + this.height }, // initial bottom right
+            { x: this.origin.x, y: this.origin.y + this.height }, // initial bottom left
         ];
 
         // Other
+        this.offset = 4;
         this.section = 0;
     }
 
