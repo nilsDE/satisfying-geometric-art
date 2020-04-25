@@ -1,23 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Thasadith:700" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Thasadith:700" rel="stylesheet" />
     <script src="libraries/p5.js"></script>
     <script src="libraries/p5.dom.js"></script>
     <script src="libraries/p5.sound.js"></script>
     <script src="sketch.js"></script>
     <script src="rectangle.js"></script>
+    <script src="examples.js"></script>
     <title>Satisfying Drawings</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container">
-
-</body>
-
+      <div id="sketch-holder"></div>
+      <div id="controls">
+        <button name="button" value="0" class="start-animation">
+          Start Animation
+        </button>
+        <br />
+        <button name="clear-all" value="0" class="clear-all">
+          Clear
+        </button>
+        <br />
+        <button name="example" value="0" class="insert-example">
+          Insert Example
+        </button>
+        <br />
+        <button name="overlay-example" value="0" class="insert-overlay-example">
+          Insert overlaying example #1
+        </button>
+        <br />
+        <button name="overlay-example-2" value="0" class="insert-overlay-example-2">
+          Insert overlaying example #2
+        </button>
+      </div>
+    </div>
+  </body>
 </html>
