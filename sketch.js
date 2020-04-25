@@ -43,7 +43,7 @@ function setup() {
   canvas.mousePressed(() => (tmpPoint1 = { x: mouseX, y: mouseY }));
   canvas.mouseReleased(() => {
     tmpPoint2 = { x: mouseX, y: mouseY };
-    elements.push(new Rectangle(tmpPoint1, tmpPoint2.x - tmpPoint1.x, tmpPoint2.y - tmpPoint1.y, false, offsetSlider.value()));
+    elements.push(new Shape(tmpPoint1, tmpPoint2.x - tmpPoint1.x, tmpPoint2.y - tmpPoint1.y, false, offsetSlider.value()));
     tmpPoint1 = null;
     tmpPoint2 = null;
   });
