@@ -6,10 +6,6 @@ body {
   display: flex;
 }
 
-#controls {
-  margin-top: 60px;
-}
-
 .btn {
   margin-bottom: 4px;
 }

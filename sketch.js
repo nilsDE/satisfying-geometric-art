@@ -2,6 +2,9 @@ let canvas;
 let elements = [];
 let offsetSlider;
 let sliderValue;
+let silderR;
+let silderG;
+let silderB;
 
 // Settings
 let animationStarted = false;
@@ -14,7 +17,14 @@ function setup() {
   canvas.parent("sketch-holder");
 
   offsetSlider = createSlider(1, 30, 4);
-  offsetSlider.position(1250, 20);
+  offsetSlider.position(1230, 200);
+
+  sliderR = createSlider(0, 255, 0);
+  sliderR.position(1230, 265);
+  sliderG = createSlider(0, 255, 0);
+  sliderG.position(1230, 290);
+  sliderB = createSlider(0, 255, 0);
+  sliderB.position(1230, 315);
 
   // Buttons
   document.querySelector(".start-animation").onclick = () => {
@@ -39,7 +49,9 @@ function setup() {
     insertSatisfyingExample(offsetSlider.value());
   };
   document.querySelector(".create-new-shape").onclick = () => {
-    elements.push(new Shape(tmpPoints, false, offsetSlider.value()));
+    elements.push(
+      new Shape(tmpPoints, false, offsetSlider.value(), { r: sliderR.value(), g: sliderG.value(), b: sliderB.value() })
+    );
     tmpPoints = [];
   };
 
@@ -58,7 +70,10 @@ function draw() {
     pop();
   }
   for (let point of tmpPoints) {
-    ellipse(point.x, point.y, 2);
+    push();
+    fill(255, 0, 0);
+    ellipse(point.x, point.y, 4);
+    pop();
   }
 
   for (let element of elements) {

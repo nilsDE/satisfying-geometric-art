@@ -1,5 +1,5 @@
 class Shape {
-  constructor(corners, reverse, offset) {
+  constructor(corners, reverse, offset, color) {
     // Outline rectangle
     this.originalCorners = this.copyCorners(corners);
 
@@ -12,6 +12,7 @@ class Shape {
     this.offset = offset;
     this.section = 0;
     this.noOfCorners = corners.length;
+    this.color = color;
   }
 
   copyCorners(corners) {
@@ -24,7 +25,8 @@ class Shape {
   }
 
   drawRect() {
-    stroke(200, 0, 60);
+    push();
+    stroke(this.color.r, this.color.g, this.color.b);
     for (let i = 0; i < this.noOfCorners; i++) {
       if (this.originalCorners[i + 1]) {
         line(this.originalCorners[i].x, this.originalCorners[i].y, this.originalCorners[i + 1].x, this.originalCorners[i + 1].y);
@@ -32,6 +34,7 @@ class Shape {
         line(this.originalCorners[i].x, this.originalCorners[i].y, this.originalCorners[0].x, this.originalCorners[0].y);
       }
     }
+    pop();
   }
 
   getCorners() {
@@ -65,7 +68,7 @@ class Shape {
     resultY = firstCorner.y + interimsVector.y;
     pop();
 
-    stroke(200, 0, 60);
+    stroke(this.color.r, this.color.g, this.color.b);
     let lengthOfLine = dist(startCorner.x, startCorner.y, resultX, resultY);
     if (lengthOfLine > this.offset) {
       line(startCorner.x, startCorner.y, resultX, resultY);
