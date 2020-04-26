@@ -13,7 +13,7 @@ function setup() {
   canvas = createCanvas(1220, 802);
   canvas.parent("sketch-holder");
 
-  offsetSlider = createSlider(1, 50, 4);
+  offsetSlider = createSlider(1, 30, 4);
   offsetSlider.position(1250, 20);
 
   // Buttons
@@ -30,10 +30,6 @@ function setup() {
     offsetSlider.value(4);
     insertExample(offsetSlider.value());
   };
-  // document.querySelector(".insert-overlay-example").onclick = () => {
-  //   offsetSlider.value(12);
-  //   insertOverlayExample(offsetSlider.value());
-  // };
   document.querySelector(".insert-overlay-example-2").onclick = () => {
     offsetSlider.value(8);
     insertOverlayExample2(offsetSlider.value());

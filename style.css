@@ -1,11 +1,19 @@
 body {
-    font-family: 'Thasadith', sans-serif;
+  font-family: "Thasadith", sans-serif;
 }
 
 .container {
-    display: flex;
+  display: flex;
 }
 
 #controls {
-    margin-top: 60px;
+  margin-top: 60px;
+}
+
+.btn {
+  margin-bottom: 4px;
+}
+
+.paragraph {
+  margin-bottom: 2px;
 }
