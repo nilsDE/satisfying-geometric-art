@@ -1,8 +1,7 @@
 class Shape {
   constructor(corners, reverse, offset) {
     // Outline rectangle
-    console.log(corners);
-    this.originalCorners = [...corners];
+    this.originalCorners = this.copyCorners(corners);
 
     // Available space
     this.corners = [...corners];
@@ -15,11 +14,19 @@ class Shape {
     this.noOfCorners = corners.length;
   }
 
+  copyCorners(corners) {
+    let result = [];
+    corners.forEach((c) => {
+      let copy = Object.assign({}, c);
+      result.push(copy);
+    });
+    return result;
+  }
+
   drawRect() {
     stroke(200, 0, 60);
-
     for (let i = 0; i < this.noOfCorners; i++) {
-      if (this.corners[i + 1]) {
+      if (this.originalCorners[i + 1]) {
         line(this.originalCorners[i].x, this.originalCorners[i].y, this.originalCorners[i + 1].x, this.originalCorners[i + 1].y);
       } else {
         line(this.originalCorners[i].x, this.originalCorners[i].y, this.originalCorners[0].x, this.originalCorners[0].y);
@@ -59,9 +66,10 @@ class Shape {
     pop();
 
     stroke(200, 0, 60);
-    line(startCorner.x, startCorner.y, resultX, resultY);
-    // console.log(startCorner.x, startCorner.y, resultX, resultY);
-    console.log(this.originalCorners);
+    let lengthOfLine = dist(startCorner.x, startCorner.y, resultX, resultY);
+    if (lengthOfLine > this.offset) {
+      line(startCorner.x, startCorner.y, resultX, resultY);
+    }
     this.corners[sectionPlusOne].x = resultX;
     this.corners[sectionPlusOne].y = resultY;
 
