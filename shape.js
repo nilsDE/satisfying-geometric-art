@@ -12,7 +12,7 @@ class Shape {
     this.offset = offset;
     this.section = 0;
     this.noOfCorners = corners.length;
-    this.color = color;
+    this.color = color ? color : { r: 220, g: 0, b: 60 };
   }
 
   copyCorners(corners) {
